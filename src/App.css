@@ -13,6 +13,7 @@
   }
 }
 
+
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -35,4 +36,15 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.numDiv {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  margin: 5px;
+  border : 1px solid gray ;
+  border-radius: 50%;
 }
