@@ -17,7 +17,7 @@ const ClockTime = () => {
             setDt(new Date().toLocaleTimeString()) ;
         }, 1000) ;
 
-        return clearInterval(t) ;
+        return () => {clearInterval(t)} ;
     },[]) ;
 
     //useEffect : 특정변수가 바뀔때 실행
