@@ -4,7 +4,8 @@ import './App.css';
 // import MyCom from './03/MyCom';
 // import MyDiv from './03/MyDiv';
 // import Box from './04/Box';
-import Frcst from './05/Frcst';
+// import Frcst from './05/Frcst';
+import Taccident from './06/Taccident' ;
 
 function App() {
   return (
@@ -13,7 +14,8 @@ function App() {
     // <MyCom />
     // <MyDiv /> 
     // <Box />
-    <Frcst />
+    // <Frcst />
+    <Taccident />
   );
 }
 
