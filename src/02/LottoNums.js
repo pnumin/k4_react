@@ -53,7 +53,7 @@ const LottoNums = ({ ns }) => {
         n = Math.floor(item / 10); 
         return (
             idx === (ns.length - 1)  
-            ? <div className={style.plus}> + </div>
+            ? <div key='nsplus' className={style.plus}> + </div>
             : <div key={'ns' + idx} className={style[`lottonum${n + 1}`]}>
                 {item}
               </div>
