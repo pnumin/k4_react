@@ -5,7 +5,9 @@ import './App.css';
 // import MyDiv from './03/MyDiv';
 // import Box from './04/Box';
 // import Frcst from './05/Frcst';
-import Taccident from './06/Taccident' ;
+// import Taccident from './06/Taccident' ;
+import MyRef from './07/MyRef';
+// import Gallery from './08/Gallery';
 
 function App() {
   return (
@@ -15,7 +17,9 @@ function App() {
     // <MyDiv /> 
     // <Box />
     // <Frcst />
-    <Taccident />
+    // <Taccident />
+    <MyRef />
+    // <Gallery />
   );
 }
 

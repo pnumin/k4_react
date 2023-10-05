@@ -1,5 +1,7 @@
-const TaccidentNav = ({title, c, setSel}) => {
-    console.log("tn" , c)
+import './Taccident.css' ; 
+const TaccidentNav = ({title, c, sel, setSel}) => {
+    console.log("tntitle" , title.slice(5))
+    console.log("sel" , sel)
 
     const handleClick = (k) => {
         setSel(k) ;
@@ -7,7 +9,11 @@ const TaccidentNav = ({title, c, setSel}) => {
 
     const liTag = c.map((item, idx) => 
         <li key={`li${idx}`}>
-            <button onClick={() => handleClick(item) }>{item}</button>
+            <button 
+            className={item === sel ? "bt1" : "bt2"}
+            onClick={() => handleClick(item) }>
+                {item}
+            </button>
         </li>
     );
     return (
