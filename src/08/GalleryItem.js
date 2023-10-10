@@ -17,7 +17,7 @@ const GalleryItem = ({item}) => {
 
 
   return (
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 lg:gap-38">
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 lg:gap-38">
       {tags}
     </div>
   )
