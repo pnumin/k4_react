@@ -1,4 +1,4 @@
-import GalleryCard from "./GalleryCard";
+import GalleryCard from "../comm/GalleryCard";
 const GalleryItem = ({item}) => {
     console.log("GalleryItem", item);
 
@@ -12,7 +12,9 @@ const GalleryItem = ({item}) => {
                     imgsrc={i.galWebImageUrl.replace('http:','https:')} 
                     title={i.galTitle} 
                     content={i.galPhotographyLocation} 
-                    sptag={i.galSearchKeyword.split(',')} />
+                    sptag={i.galSearchKeyword.split(',')}
+                    
+                     />
     ) ;
 
 
