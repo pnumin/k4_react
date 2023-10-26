@@ -9,7 +9,8 @@ import './App.css';
 // import MyRef from './07/MyRef';
 // import Gallery from './08/Gallery';
 // import Busan from './09/Busan';
-import RoutMain from './10/RoutMain';
+// import RoutMain from './10/RoutMain';
+import Fcst from './11/Fcst';
 
 function App() {
   return (
@@ -24,7 +25,8 @@ function App() {
     // <MyRef /> 
     // <Gallery />
     // <Busan />
-    <RoutMain />
+    // <RoutMain />
+    <Fcst />
   );
 }
 
