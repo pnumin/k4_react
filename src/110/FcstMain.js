@@ -1,4 +1,5 @@
 import ButtonBlue from "../comm/ButtonBlue"  ;
+import TailSelect from "../comm/TailSelect";
 import { useState, useEffect, useRef } from "react";
 import getxy from "./getxy.json" ;
 import { Link } from "react-router-dom";
@@ -12,15 +13,15 @@ const FcstMain = () => {
 
   //select -> option 생성
   //console.log("getxy" , getxy);
-  const ops = getxy.map((item) => 
-    <option value={item['행정구역코드']} key={item['행정구역코드']}>
-      {item["1단계"]}
-    </option>
-  );
+  const seldata = getxy.map((item) => [item['행정구역코드'], item["1단계"]]);
 
   //입력폼
-  const dtRef = useRef() ;
-  const selRef = useRef() ;
+  const dtRef = useRef() ; 
+
+  //버튼클릭
+  const handleFcstClick = (e) => {
+    e.preventDefault();
+  }
 
   //사용자정의함수 : 날짜 변경시 발생
   const handleDtChange = () => {
@@ -28,12 +29,14 @@ const FcstMain = () => {
   }
 
   //사용자정의함수 : 지역 선택 발생
-  const handleAreaChange = () => {
+  const handleAreaChange = (e) => {
+    if (e.target.value === '' ) return ;
+
     //1.sel의 값을 가져오기
     //selRef.current.value
     //2.getxy에서 sel값과 행정구역코드가 같은 자료 추출
     let temp = getxy.filter((item) => 
-          item['행정구역코드'] === parseInt(selRef.current.value) )[0];
+          item['행정구역코드'] === parseInt(e.target.value) )[0];
     //console.log("temp", temp)
 
     //3.상태변수 area, x, y를 변경
@@ -64,19 +67,33 @@ const FcstMain = () => {
         단기예보 입력정보
       </div>
       <div>
+       {dt}
+      </div>
+      <div>
+       {area} - {x} - {y}
+      </div>
+      <div>
         <input ref={dtRef} type='date' id='dt' name='dt' onChange={handleDtChange}/>
       </div>
       <div>
-        <select ref={selRef} id='sel' name='sel' onChange={handleAreaChange}>
-          <option value=''>지역선택</option>
-          {ops}
-        </select>
+        <TailSelect seldata = {seldata} handleChange={handleAreaChange} />
       </div>
       <div>
-          <Link to={`/ultra/${dt}/${area}/${x}/${y}`}><ButtonBlue caption='초단기예보' /></Link>
+        {
+          (dt === undefined ) | (x === undefined) 
+            ? <ButtonBlue caption='초단기예보' handleClick={handleFcstClick}/>
+            // : <Link to={`/ultra/${dt}/${area}/${x}/${y}/1`}><ButtonBlue caption='초단기예보' /></Link>
+            : <Link to={`/fetch/${dt}/${area}/${x}/${y}/1`}><ButtonBlue caption='초단기예보' /></Link>
+        }
+          
       </div>
       <div>
-          <Link to={`/ultra/${dt}/${area}/${x}/${y}`}><ButtonBlue caption='단기예보' /></Link>
+      {
+          (dt === undefined ) | (x === undefined) 
+            ? <ButtonBlue caption='초단기예보' handleClick={handleFcstClick}/>
+            : <Link to={`/fetch/${dt}/${area}/${x}/${y}/2`}><ButtonBlue caption='단기예보' /></Link>
+        }
+          
       </div>
     </div>
     </form>
