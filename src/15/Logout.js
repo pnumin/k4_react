@@ -1,4 +1,5 @@
 import ButtonBlue  from "../comm/ButtonBlue";
+
 const Loginout = () => {
   return (
     <section className="bg-gray-50 dark:bg-gray-900">
@@ -17,8 +18,7 @@ const Loginout = () => {
               </div>
                
               <ButtonBlue caption="로그아웃" />
-               
-            
+
           </div>
         </div>
       </div>
