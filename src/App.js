@@ -10,7 +10,11 @@ import './App.css';
 // import Gallery from './08/Gallery';
 // import Busan from './09/Busan';
 // import RoutMain from './10/RoutMain';
-import Fcst from './12/Fcst';
+// import Fcst from './12/Fcst';
+// import DivMain from './14/DivMain';
+// import { RecoilRoot } from 'recoil';
+import Login from './15/Login';
+
 
 function App() {
   return (
@@ -26,7 +30,11 @@ function App() {
     // <Gallery />
     // <Busan />
     // <RoutMain />
-    <Fcst />
+    //<Fcst />
+    // <RecoilRoot>
+    //   <DivMain />
+    // </RecoilRoot>
+    <Login />
   );
 }
 
